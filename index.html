@@ -25,16 +25,43 @@ main{padding:28px;max-width:1500px;width:100%;margin:auto}.welcome{background:li
 .mobile-menu{display:none}
 @media(max-width:900px){.layout{grid-template-columns:1fr}aside{display:none}main{padding:18px}.grid{grid-template-columns:repeat(2,1fr)}.welcome h1{font-size:25px}.stats{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.topbar{padding:0 14px;height:60px}.brand small{display:none}.top-actions button:not(.mobile-menu){display:none}.mobile-menu{display:inline-block!important}.layout{min-height:calc(100vh - 60px)}main{padding:14px}.welcome{padding:22px 19px}.welcome-mark{display:none}.welcome h1{font-size:23px}.grid,.stats,.doc-grid,.form-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.footer{flex-direction:column}.toolbar>*{width:100%}.search{min-width:0}}
+
+/* Google Sites-friendly responsive frame and collapsible navigation */
+html,body{width:100%;max-width:100%;margin:0;padding:0;overflow-x:hidden}
+body{min-width:0}
+.topbar{width:100%;padding-left:clamp(12px,2vw,28px);padding-right:clamp(12px,2vw,28px)}
+.layout{width:100%;max-width:100%;grid-template-columns:250px minmax(0,1fr)}
+aside{min-width:0;transition:width .22s ease,padding .22s ease;overflow:hidden}
+main{min-width:0;width:100%;max-width:none;padding:clamp(14px,2.2vw,30px)}
+.nav-toggle{width:100%;display:flex;align-items:center;gap:10px;border:0;border-radius:9px;background:#eef4fb;color:var(--navy);font-weight:800;padding:11px 12px;margin-bottom:10px;text-align:left}
+.nav-toggle .chev{margin-left:auto;transition:transform .2s}
+aside.collapsed{padding:14px 9px}
+aside.collapsed .nav-label{display:none}
+aside.collapsed .nav-toggle{justify-content:center;padding:11px 5px}
+aside.collapsed .nav-toggle .menu-word,aside.collapsed .nav-toggle .chev,aside.collapsed .nav button .nav-text{display:none}
+aside.collapsed .nav button{justify-content:center;padding:13px 5px}
+.layout.menu-collapsed{grid-template-columns:70px minmax(0,1fr)}
+.updates-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.update-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px;min-width:0}
+.update-card h3{font-size:14px;margin:0 0 6px}
+.update-card p{font-size:12px;line-height:1.5;color:var(--muted);margin:6px 0}
+.update-meta{font-size:11px;color:#8190a4;margin-bottom:7px}
+.update-card a{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none}
+.update-card a:hover{text-decoration:underline}
+.update-status{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.layout,.layout.menu-collapsed{grid-template-columns:1fr}aside{display:none;position:relative;width:100%;border-right:0;border-bottom:1px solid var(--line);padding:12px 14px}aside.mobile-open{display:block}.layout.menu-collapsed aside{width:100%}aside.collapsed{padding:12px 14px}aside.collapsed .nav-label{display:block}aside.collapsed .nav-toggle .menu-word,aside.collapsed .nav-toggle .chev,aside.collapsed .nav button .nav-text{display:inline}aside.collapsed .nav button{justify-content:flex-start;padding:12px}.updates-grid{grid-template-columns:1fr}}
+@media(max-width:560px){main{padding:12px}.topbar{height:60px}.updates-grid{grid-template-columns:1fr}.layout{min-height:calc(100vh - 60px)}}
+
 </style>
 </head>
 <body>
 <header class="topbar">
  <div class="brand"><div class="logo">DIC</div><div><strong>DIC CONNECT</strong><small>QCI - internal staff of DIC</small></div></div>
- <div class="top-actions"><button class="mobile-menu" onclick="toggleMobile()">☰</button></div>
+ <div class="top-actions"><button class="mobile-menu" onclick="toggleMobile()" aria-label="Open portal menu">☰ Menu</button></div>
 </header>
 <div class="layout">
 <aside>
- <div class="nav-label">PORTAL MENU</div>
+ <button class="nav-toggle" type="button" onclick="togglePortalMenu()" aria-expanded="true" aria-controls="nav"><span>☰</span><span class="menu-word">PORTAL MENU</span><span class="chev">‹</span></button><div class="nav-label">NAVIGATION</div>
  <nav class="nav" id="nav">
   <button class="active" data-page="home" onclick="showPage('home')"><span class="ico">▦</span> Dashboard</button>
   <button data-page="knowledge" onclick="showPage('knowledge')"><span class="ico">▧</span> Knowledge Base</button>
@@ -53,7 +80,7 @@ main{padding:28px;max-width:1500px;width:100%;margin:auto}.welcome{background:li
  <div class="grid">
   <div class="card quick" onclick="showPage('knowledge')"><div class="symbol">▧</div><h3>Knowledge Base</h3><p>Presentations, schemes, policies and reference guides.</p></div>
   <div class="card quick" onclick="showPage('attendance')"><div class="symbol">✓</div><h3>Attendance Guidelines</h3><p>Rules, procedures and staff instructions.</p></div>
-  <div class="card quick" onclick="showPage('library')"><div class="symbol">▤</div><h3>Circulars & Notifications</h3><p>Official documents and departmental orders.</p></div>
+  <div class="card quick" role="link" tabindex="0" aria-label="Open Circulars & Notifications" onclick="window.location.href='https://fabnick1107.github.io/Notice-board-for-DIC/'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='https://fabnick1107.github.io/Notice-board-for-DIC/'}"><div class="symbol">▤</div><h3>Circulars & Notifications</h3><p>Latest circulars, news and team notifications.</p></div>
   <div class="card quick" onclick="showPage('holidays')"><div class="symbol">▦</div><h3>Holiday Calendar</h3><p>Holiday dates and calendar reference.</p></div>
   <div class="card quick" onclick="showPage('district')"><div class="symbol">▥</div><h3>District Reporting</h3><p>Monthly tracker and field visit reporting.</p></div>
  </div>
@@ -62,10 +89,10 @@ main{padding:28px;max-width:1500px;width:100%;margin:auto}.welcome{background:li
   <div class="card stat"><div><small>Categories</small><strong>6</strong></div><div class="symbol">▦</div></div>
   <div class="card stat"><div><small>Portal status</small><strong style="font-size:17px;color:var(--green)">Ready to configure</strong></div><div class="symbol">●</div></div>
  </div>
- <div class="section-head"><div><h2>Latest documents</h2><p>Demonstration entries — replace with approved departmental files.</p></div><button class="btn secondary" onclick="showPage('library')">View library →</button></div>
+ <div class="section-head"><div><h2>News, meetings & team updates</h2><p>Automatically refreshed from the central Google Doc.</p></div><span class="update-status" id="updatesStatus">Connecting to live updates…</span></div>
+ <div class="updates-grid" id="liveUpdates"><div class="panel update-status">Live updates will appear here once the Google Apps Script endpoint is configured.</div></div>
+ <div class="section-head"><div><h2>Latest documents</h2><p>Reference documents and templates.</p></div><button class="btn secondary" onclick="showPage('library')">View library →</button></div>
  <div class="panel"><div class="table-wrap"><table><thead><tr><th>Document</th><th>Category</th><th>Published</th><th>Version</th><th>Status</th><th></th></tr></thead><tbody id="latestRows"></tbody></table></div></div>
- <div class="section-head"><div><h2>Important notice</h2></div></div>
- <div class="notice">Please refer to the latest approved departmental circulars and instructions. This prototype contains sample entries and is not an official government publication.</div>
 </section>
 <section class="page" id="page-library">
  <div class="hero-small"><h1>Document Library</h1><p>Search and filter departmental documents. Replace sample records with approved documents.</p></div>
@@ -107,6 +134,9 @@ main{padding:28px;max-width:1500px;width:100%;margin:auto}.welcome{background:li
 <div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Document details</h2><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
+// Paste your deployed Google Apps Script Web App URL here (ends in /exec).
+const LIVE_UPDATES_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const LIVE_REFRESH_MS = 3 * 60 * 1000;
 const seed=[
 {id:2,title:"Monthly Tracker Template by District Team",category:"District Reporting",date:"",version:"Template",status:"Current",ref:"Google Sheets / Excel",description:"District monthly reporting template with sections for MSME desk assistance, field visits and other tasks assigned by DIC.",url:"https://docs.google.com/spreadsheets/d/1ZDgpNGeTUAlothReJ2xJ0JfuuFM5SuPa/edit"},
 {id:3,title:"Leave Application Format",category:"Forms & Templates",date:"",version:"Template",status:"Current",ref:"DOCX / Google Doc",description:"Leave application format addressed to the General Manager, District Industries Centre, including leave period and reason.",url:"https://docs.google.com/document/d/1rg32m85EyOZBUxoSw_uqOFRzN7I0Kmnw/edit"},
@@ -132,8 +162,9 @@ let docs=(JSON.parse(localStorage.getItem("dicDocs_v2")||"null")||seed).filter(d
 function save(){localStorage.setItem("dicDocs_v2",JSON.stringify(docs))}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function fmt(d){return d?new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"}):"—"}
-function showPage(p){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("page-"+p).classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.page===p));if(p==="library")renderLibrary();window.scrollTo(0,0);document.querySelector("aside").style.display="";}
-function toggleMobile(){const a=document.querySelector("aside");a.style.display=a.style.display==="block"?"none":"block";a.style.position="absolute";a.style.zIndex=10;a.style.width="245px";a.style.boxShadow="var(--shadow)"}
+function showPage(p){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("page-"+p).classList.add("active");document.querySelectorAll(".nav button[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===p));if(p==="library")renderLibrary();window.scrollTo(0,0);if(window.matchMedia("(max-width:900px)").matches)document.querySelector("aside").classList.remove("mobile-open");}
+function togglePortalMenu(){const a=document.querySelector("aside"),l=document.querySelector(".layout");if(window.matchMedia("(max-width:900px)").matches){a.classList.toggle("mobile-open");return;}a.classList.toggle("collapsed");l.classList.toggle("menu-collapsed");document.querySelector(".nav-toggle").setAttribute("aria-expanded",String(!a.classList.contains("collapsed")));}
+function toggleMobile(){document.querySelector("aside").classList.toggle("mobile-open");}
 function docRow(d){return `<tr><td><div class="doc-title"><div class="pdf">PDF</div><div><strong>${esc(d.title)}</strong><span class="sub">${esc(d.ref||"No reference number")}</span></div></div></td><td>${esc(d.category)}</td><td>${fmt(d.date)}</td><td>${esc(d.version)}</td><td><span class="pill ${d.status==="Archived"?"archive":""}">${esc(d.status)}</span></td><td><button class="btn secondary" onclick="viewDoc(${d.id})">View</button></td></tr>`}
 function renderHome(){document.getElementById("statDocs").textContent=docs.length;document.getElementById("latestRows").innerHTML=[...docs].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5).map(docRow).join("")}
 function renderLibrary(){let q=(document.getElementById("q").value||"").toLowerCase(),c=document.getElementById("cat").value,y=document.getElementById("year").value,s=document.getElementById("status").value;let list=docs.filter(d=>(!q||(d.title+" "+d.ref).toLowerCase().includes(q))&&(!c||d.category===c)&&(!y||d.date.startsWith(y))&&(!s||d.status===s)).sort((a,b)=>b.date.localeCompare(a.date));document.getElementById("libraryRows").innerHTML=list.map(docRow).join("")||'<tr><td colspan="6">No documents match your filters.</td></tr>';document.getElementById("resultCount").textContent=list.length+" document(s) found"}
@@ -144,7 +175,23 @@ function renderCards(){document.getElementById("attendanceCards").innerHTML=docs
 function viewDoc(id){let d=docs.find(x=>x.id===id);document.getElementById("modalTitle").textContent=d.title;document.getElementById("modalBody").innerHTML=`<p>${esc(d.description||"")}</p><p><b>Category:</b> ${esc(d.category)}<br><b>Reference:</b> ${esc(d.ref||"—")}<br><b>Publication date:</b> ${fmt(d.date)}<br><b>Version:</b> ${esc(d.version)}<br><b>Status:</b> ${esc(d.status)}</p>${d.url?`<a class="btn" href="${esc(d.url)}" target="_blank" rel="noopener">Open PDF</a>`:'<div class="notice">No PDF link has been configured for this demonstration record. An administrator should add the approved Google Drive link.</div>'}`;document.getElementById("modal").classList.add("show")}
 function closeModal(){document.getElementById("modal").classList.remove("show")}
 function toast(t){let x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3200)}
+
+function renderLiveUpdates(items){
+ const host=document.getElementById("liveUpdates"),status=document.getElementById("updatesStatus");
+ if(!Array.isArray(items)||!items.length){host.innerHTML='<div class="panel update-status">No current updates have been published.</div>';status.textContent="Updated from Google Docs";return;}
+ host.innerHTML=items.map(item=>`<article class="update-card"><div class="update-meta">${esc(item.category||"UPDATE")}${item.date?" · "+esc(item.date):""}</div><h3>${esc(item.title||"Update")}</h3><p>${esc(item.description||"")}</p>${item.url?`<a href="${esc(item.url)}" target="_blank" rel="noopener noreferrer">Open link ↗</a>`:""}</article>`).join("");
+ status.textContent="Last refreshed: "+new Date().toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit"});
+}
+function loadLiveUpdates(){
+ if(!LIVE_UPDATES_ENDPOINT||LIVE_UPDATES_ENDPOINT.includes("PASTE_YOUR_")){document.getElementById("updatesStatus").textContent="Google Doc connection not configured";return;}
+ const cb="dicUpdatesCallback";
+ window[cb]=function(payload){try{renderLiveUpdates(payload.items||[]);}catch(e){document.getElementById("updatesStatus").textContent="Could not display updates";}finally{delete window[cb];}};
+ const old=document.getElementById("dic-live-script");if(old)old.remove();
+ const script=document.createElement("script");script.id="dic-live-script";script.src=LIVE_UPDATES_ENDPOINT+ (LIVE_UPDATES_ENDPOINT.includes("?")?"&":"?")+"callback="+cb+"&t="+Date.now();script.onerror=()=>{document.getElementById("updatesStatus").textContent="Unable to load updates — check Apps Script deployment and sharing";};document.body.appendChild(script);
+}
 function renderAll(){renderHome();renderLibrary();renderCards();renderKnowledge()}
 renderAll();
+loadLiveUpdates();
+setInterval(loadLiveUpdates,LIVE_REFRESH_MS);
 </script>
 </body></html>
