@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIC Connect | Attendance, Circulars & Guidelines</title>
+<style>
+:root{--navy:#173b65;--blue:#2874b9;--bg:#f3f6fb;--ink:#243247;--muted:#64748b;--line:#e3eaf2;--white:#fff;--gold:#e5a63b;--green:#16835d;--red:#b94343;--shadow:0 8px 28px rgba(25,53,87,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.topbar{height:68px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:5;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:40px;height:40px;border:1px solid #ffffff55;border-radius:11px;display:grid;place-items:center;font-weight:800;color:#fff}.brand strong{display:block;letter-spacing:.7px}.brand small{color:#d7e5f4;font-size:11px}.top-actions{display:flex;align-items:center;gap:10px}.top-actions button{background:#ffffff18;color:white;border:1px solid #ffffff40;border-radius:9px;padding:9px 13px}
+.layout{display:grid;grid-template-columns:245px 1fr;min-height:calc(100vh - 68px)}aside{background:#fff;border-right:1px solid var(--line);padding:22px 14px}.nav-label{font-size:10px;font-weight:800;color:#94a3b8;letter-spacing:1.2px;padding:12px 12px 8px}.nav button{width:100%;display:flex;gap:12px;align-items:center;text-align:left;padding:12px;border:0;background:transparent;color:#526176;border-radius:9px;margin:2px 0;font-weight:600}.nav button.active,.nav button:hover{background:#eaf2fb;color:var(--blue)}.nav .ico{width:20px;text-align:center;font-size:17px}
+main{padding:28px;max-width:1500px;width:100%;margin:auto}.welcome{background:linear-gradient(115deg,#173b65,#2874b9);border-radius:17px;color:#fff;padding:28px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:var(--shadow)}.eyebrow{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#cfe1f5;font-weight:800}.welcome h1{font-size:30px;margin:8px 0}.welcome p{margin:0;color:#e3edf8;max-width:650px;line-height:1.55}.welcome-mark{font-size:54px;opacity:.85}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:28px 0 14px;gap:12px}.section-head h2{font-size:18px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:18px;box-shadow:0 3px 14px rgba(20,45,75,.035)}.quick{cursor:pointer;transition:.15s}.quick:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#b8d2ec}.quick .symbol{width:42px;height:42px;border-radius:12px;background:#eaf2fb;color:var(--blue);display:grid;place-items:center;font-size:20px;margin-bottom:14px}.quick h3{margin:0 0 5px;font-size:14px}.quick p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.stat{display:flex;justify-content:space-between;align-items:center}.stat small{color:var(--muted);display:block}.stat strong{font-size:25px;display:block;margin-top:6px}.stat .symbol{font-size:23px;color:var(--blue)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 14px rgba(20,45,75,.035)}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.field{border:1px solid #d7e0ea;background:#fff;border-radius:9px;padding:10px 12px;color:var(--ink);min-height:40px}.search{flex:1;min-width:220px}.btn{border:0;border-radius:9px;padding:10px 14px;font-weight:700;background:var(--blue);color:#fff}.btn.secondary{background:#eaf2fb;color:var(--blue)}.btn.outline{background:white;color:var(--blue);border:1px solid #cbdced}.btn.dark{background:var(--navy)}.btn.gold{background:var(--gold);color:#233044}
+.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:760px}th,td{text-align:left;padding:13px 11px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.6px;background:#f8fafc}td strong{font-size:13px}.sub{display:block;color:var(--muted);font-size:11px;margin-top:4px}.pill{display:inline-block;padding:5px 8px;border-radius:20px;background:#e8f5ef;color:#16734f;font-size:10px;font-weight:800}.pill.archive{background:#eef1f5;color:#64748b}.pill.demo{background:#fff4df;color:#93600b}
+.doc-title{display:flex;gap:10px;align-items:center}.pdf{width:34px;height:38px;border-radius:7px;background:#fff0ef;color:#c3443f;display:grid;place-items:center;font-size:11px;font-weight:900}
+.notice{background:#fff9ec;border:1px solid #f3dfb4;border-radius:12px;padding:14px 16px;color:#775516;font-size:13px;line-height:1.5}
+.page{display:none}.page.active{display:block}.hero-small{margin-bottom:20px}.hero-small h1{margin:0 0 6px;font-size:25px}.hero-small p{margin:0;color:var(--muted);font-size:14px}
+.doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.doc-card{display:flex;gap:14px;align-items:flex-start}.doc-card h3{font-size:14px;margin:0 0 5px}.doc-card p{font-size:12px;color:var(--muted);margin:0 0 10px;line-height:1.45}.doc-card .actions{display:flex;gap:7px;flex-wrap:wrap}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.form-group label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}.form-group input,.form-group select,.form-group textarea{width:100%}.form-group.full{grid-column:1/-1}.checkline{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.5}.hidden{display:none!important}
+.footer{margin-top:32px;padding:20px 4px;color:#738197;font-size:11px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.modal-backdrop{position:fixed;inset:0;background:#10243c88;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal-backdrop.show{display:flex}.modal{background:#fff;border-radius:15px;max-width:650px;width:100%;max-height:90vh;overflow:auto;padding:22px;box-shadow:0 20px 60px #10243c44}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.modal-head h2{margin:0;font-size:19px}.close{border:0;background:#edf2f7;border-radius:8px;padding:7px 11px}.toast{position:fixed;bottom:20px;right:20px;background:#173b65;color:white;padding:12px 17px;border-radius:10px;box-shadow:var(--shadow);display:none;z-index:30}
+.mobile-menu{display:none}
+@media(max-width:900px){.layout{grid-template-columns:1fr}aside{display:none}main{padding:18px}.grid{grid-template-columns:repeat(2,1fr)}.welcome h1{font-size:25px}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.topbar{padding:0 14px;height:60px}.brand small{display:none}.top-actions button:not(.mobile-menu){display:none}.mobile-menu{display:inline-block!important}.layout{min-height:calc(100vh - 60px)}main{padding:14px}.welcome{padding:22px 19px}.welcome-mark{display:none}.welcome h1{font-size:23px}.grid,.stats,.doc-grid,.form-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.footer{flex-direction:column}.toolbar>*{width:100%}.search{min-width:0}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="logo">DIC</div><div><strong>DIC CONNECT</strong><small>QCI - internal staff of DIC</small></div></div>
+ <div class="top-actions"><button class="mobile-menu" onclick="toggleMobile()">☰</button></div>
+</header>
+<div class="layout">
+<aside>
+ <div class="nav-label">PORTAL MENU</div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="home" onclick="showPage('home')"><span class="ico">▦</span> Dashboard</button>
+  <button data-page="knowledge" onclick="showPage('knowledge')"><span class="ico">▧</span> Knowledge Base</button>
+  <button data-page="attendance" onclick="showPage('attendance')"><span class="ico">✓</span> Attendance Guidelines</button>
+  <button data-page="library" onclick="showPage('library')"><span class="ico">▤</span> Document Library</button>
+  <button data-page="holidays" onclick="showPage('holidays')"><span class="ico">▦</span> Holiday Calendar</button>
+  <button data-page="forms" onclick="showPage('forms')"><span class="ico">⇩</span> Forms & Downloads</button>
+  <button data-page="district" onclick="showPage('district')"><span class="ico">▥</span> District Reporting</button>
+  <button data-page="history" onclick="showPage('history')"><span class="ico">◷</span> Version History</button>
+ </nav>
+</aside>
+<main>
+<section class="page active" id="page-home">
+ <div class="welcome"><div><div class="eyebrow">INTERNAL TEAM PORTAL</div><h1>Welcome to DIC CONNECT</h1><p>Your shared workspace for team updates, attendance guidelines, documents, reporting resources and important information.</p></div><div class="welcome-mark">▦</div></div>
+ <div class="section-head"><div><h2>Quick access</h2><p>Find the information you need.</p></div></div>
+ <div class="grid">
+  <div class="card quick" onclick="showPage('knowledge')"><div class="symbol">▧</div><h3>Knowledge Base</h3><p>Presentations, schemes, policies and reference guides.</p></div>
+  <div class="card quick" onclick="showPage('attendance')"><div class="symbol">✓</div><h3>Attendance Guidelines</h3><p>Rules, procedures and staff instructions.</p></div>
+  <div class="card quick" onclick="showPage('library')"><div class="symbol">▤</div><h3>Circulars & Notifications</h3><p>Official documents and departmental orders.</p></div>
+  <div class="card quick" onclick="showPage('holidays')"><div class="symbol">▦</div><h3>Holiday Calendar</h3><p>Holiday dates and calendar reference.</p></div>
+  <div class="card quick" onclick="showPage('district')"><div class="symbol">▥</div><h3>District Reporting</h3><p>Monthly tracker and field visit reporting.</p></div>
+ </div>
+ <div class="stats">
+  <div class="card stat"><div><small>Documents listed</small><strong id="statDocs">4</strong></div><div class="symbol">▤</div></div>
+  <div class="card stat"><div><small>Categories</small><strong>6</strong></div><div class="symbol">▦</div></div>
+  <div class="card stat"><div><small>Portal status</small><strong style="font-size:17px;color:var(--green)">Ready to configure</strong></div><div class="symbol">●</div></div>
+ </div>
+ <div class="section-head"><div><h2>Latest documents</h2><p>Demonstration entries — replace with approved departmental files.</p></div><button class="btn secondary" onclick="showPage('library')">View library →</button></div>
+ <div class="panel"><div class="table-wrap"><table><thead><tr><th>Document</th><th>Category</th><th>Published</th><th>Version</th><th>Status</th><th></th></tr></thead><tbody id="latestRows"></tbody></table></div></div>
+ <div class="section-head"><div><h2>Important notice</h2></div></div>
+ <div class="notice">Please refer to the latest approved departmental circulars and instructions. This prototype contains sample entries and is not an official government publication.</div>
+</section>
+<section class="page" id="page-library">
+ <div class="hero-small"><h1>Document Library</h1><p>Search and filter departmental documents. Replace sample records with approved documents.</p></div>
+ <div class="panel">
+  <div class="toolbar"><input class="field search" id="q" placeholder="Search title or reference number..." oninput="renderLibrary()"><select class="field" id="cat" onchange="renderLibrary()"><option value="">All categories</option><option>Attendance</option><option>Circular</option><option>Holiday Calendar</option><option>Forms & Templates</option><option>District Reporting</option></select><select class="field" id="year" onchange="renderLibrary()"><option value="">All years</option><option>2027</option><option>2026</option><option>2025</option></select><select class="field" id="status" onchange="renderLibrary()"><option value="">All statuses</option><option>Current</option><option>Archived</option></select><button class="btn secondary" onclick="clearFilters()">Clear filters</button></div>
+  <div class="table-wrap"><table><thead><tr><th>Document</th><th>Category</th><th>Date</th><th>Version</th><th>Status</th><th>Action</th></tr></thead><tbody id="libraryRows"></tbody></table></div>
+  <p class="sub" id="resultCount"></p>
+ </div>
+</section>
+<section class="page" id="page-knowledge">
+ <div class="hero-small"><h1>Knowledge Base</h1><p>Quick access to presentations, scheme documents, policy resources and classification guides.</p></div>
+ <div class="notice">Select a resource below to open it directly from its Google Drive or official website location.</div>
+ <div class="section-head"><div><h2>Knowledge resources</h2><p>Reference material for the internal team.</p></div></div>
+ <div class="doc-grid" id="knowledgeCards"></div>
+</section>
+<section class="page" id="page-attendance">
+ <div class="hero-small"><h1>Attendance Guidelines</h1><p>Central location for attendance procedures, instructions and related documents.</p></div>
+ <div class="notice">Attendance guidelines and related instructions are listed below, including the Minutes of Meeting dated 1 October 2026. Open each source document using its link.</div>
+ <div class="section-head"><div><h2>Attendance documents</h2><p>Open the relevant departmental document.</p></div></div><div class="doc-grid" id="attendanceCards"></div>
+</section>
+<section class="page" id="page-holidays">
+ <div class="hero-small"><h1>Holiday Calendar</h1><p>Year-wise holiday calendar and reference.</p></div><div class="notice">Holiday calendar for 2027. Open the PDF to view the complete document.</div><div class="doc-grid" id="holidayCards"></div>
+</section>
+<section class="page" id="page-forms">
+ <div class="hero-small"><h1>Forms & Downloads</h1><p>Approved templates and downloadable departmental formats.</p></div><div class="doc-grid" id="formCards"></div>
+</section>
+<section class="page" id="page-district">
+ <div class="hero-small"><h1>District Reporting</h1><p>Monthly district tracker and reporting resources for DIC teams.</p></div>
+ <div class="notice">The district tracker includes MSME desk assistance, field visit information and other tasks assigned by DIC. Use the linked master spreadsheet according to the access permissions set by its owner.</div>
+ <div class="doc-grid" id="districtCards"></div>
+</section>
+<section class="page" id="page-history">
+ <div class="hero-small"><h1>Document Version History</h1><p>Revision register for published documents.</p></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>Document</th><th>Version</th><th>Effective date</th><th>Change description</th><th>Status</th></tr></thead><tbody id="historyRows"></tbody></table></div></div>
+ <p class="sub" style="margin-top:12px">This register is a demonstration. For real version retention, use Google Drive's Manage versions feature and maintain an approved revision register.</p>
+</section>
+<footer class="footer"><span>DIC CONNECT · Internal team workspace</span></footer>
+</main>
+</div>
+<div class="modal-backdrop" id="modal" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2 id="modalTitle">Document details</h2><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const seed=[
+{id:2,title:"Monthly Tracker Template by District Team",category:"District Reporting",date:"",version:"Template",status:"Current",ref:"Google Sheets / Excel",description:"District monthly reporting template with sections for MSME desk assistance, field visits and other tasks assigned by DIC.",url:"https://docs.google.com/spreadsheets/d/1ZDgpNGeTUAlothReJ2xJ0JfuuFM5SuPa/edit"},
+{id:3,title:"Leave Application Format",category:"Forms & Templates",date:"",version:"Template",status:"Current",ref:"DOCX / Google Doc",description:"Leave application format addressed to the General Manager, District Industries Centre, including leave period and reason.",url:"https://docs.google.com/document/d/1rg32m85EyOZBUxoSw_uqOFRzN7I0Kmnw/edit"},
+{id:4,title:"Minutes of Meeting – 1 October 2026",category:"Attendance",date:"2026-10-01",version:"1.0",status:"Current",ref:"PDF",description:"Minutes of Meeting dated 1 October 2026. The source PDF is linked below.",url:"https://drive.google.com/file/d/1wcWEu1r-7WqZ_VGg98u3INHp6sagh0Iu/view"},
+{id:6,title:"Holiday Calendar 2027",category:"Holiday Calendar",date:"",version:"2027",status:"Current",ref:"PDF",description:"General Holidays 2027 notification (5-page PDF).",url:"https://drive.google.com/file/d/1wFhHX49a1_RwRMI5U8tuqbXyj4PtZndh/view"},
+{id:5,title:"Field Visit Report Format",category:"Forms & Templates",date:"",version:"Template",status:"Current",ref:"DOCX / Google Doc",description:"Field visit reporting format with employee details, places visited, duration, purpose, meetings, outcomes and follow-up.",url:"https://docs.google.com/document/d/1zulelHmFYrNSTvft3oJK94zuU9CJVnRZ/edit"}
+]
+const knowledgeResources=[
+ {title:"Presentation to Hired Staff",type:"PowerPoint",url:"https://drive.google.com/file/d/1Sc-VVZMPTpAgXaMnqqcS1VkrS7FXYnMB/view?usp=drive_link"},
+ {title:"UDYAM Registration – A Complete Guide",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1BIlJwmEHTHXs07KtOob0GouNU4gm6WUt/edit?usp=drive_link&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"ZED Presentation",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1hgP5FWr8C44uy74HyTqsM6gZagBb8WOQ/edit?usp=sharing&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"GJ-6 – Short Term Management Training",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1DE7VlGi4H_H3iPzZyBF-Cmrfz08hIrJD/edit?usp=drive_link&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"ANRF Startups & MSMEs Presentation",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1Z9LZsRJ89pqzVBEEt22uOGXwtQFsQUvM/edit?usp=drive_link&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"CGTMSE Gujarat MSME Presentation",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1BTAOUggbAqWZV9e2ysGodc7Hd6EtWEuI/edit?usp=sharing&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"Scheme Booklet (English)",type:"PDF",url:"https://drive.google.com/file/d/1rL_uYf8UZt0h9JveGhPfEdSWu7_31Nvh/view?usp=drive_link"},
+ {title:"SIP RAMP Program – Gujarat",type:"PDF",url:"https://drive.google.com/file/d/1xd1GNboDmxNB7SIZDKeSJPwBagLPFghl/view?usp=drive_link"},
+ {title:"Gujarat Industrial Policy",type:"Official Website",url:"https://msmec.gujarat.gov.in/industrialpolicy_twenty"},
+ {title:"NIC Code for MSME Classification & Definition",type:"PDF",url:"https://drive.google.com/file/d/1aZ03ns_vttmvXglzXkXkm1YvOIvrGLqF/view?usp=drive_link"},
+ {title:"HSN Overview",type:"PowerPoint",url:"https://docs.google.com/presentation/d/1_RllrHbxkpirJy_I1ssTXxX81whpUjoR/edit?usp=drive_link&ouid=101197788559603106758&rtpof=true&sd=true"},
+ {title:"SAC Overview",type:"PowerPoint",url:"https://docs.google.com/presentation/d/12bOOZsjP0-bHb4Qmv9Zpdj5r6kiU93IR/edit?usp=drive_link&ouid=101197788559603106758&rtpof=true&sd=true"}
+];
+let docs=(JSON.parse(localStorage.getItem("dicDocs_v2")||"null")||seed).filter(d=>!String(d.title||"").toLowerCase().startsWith("knowledge base"));
+function save(){localStorage.setItem("dicDocs_v2",JSON.stringify(docs))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function fmt(d){return d?new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"}):"—"}
+function showPage(p){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("page-"+p).classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.page===p));if(p==="library")renderLibrary();window.scrollTo(0,0);document.querySelector("aside").style.display="";}
+function toggleMobile(){const a=document.querySelector("aside");a.style.display=a.style.display==="block"?"none":"block";a.style.position="absolute";a.style.zIndex=10;a.style.width="245px";a.style.boxShadow="var(--shadow)"}
+function docRow(d){return `<tr><td><div class="doc-title"><div class="pdf">PDF</div><div><strong>${esc(d.title)}</strong><span class="sub">${esc(d.ref||"No reference number")}</span></div></div></td><td>${esc(d.category)}</td><td>${fmt(d.date)}</td><td>${esc(d.version)}</td><td><span class="pill ${d.status==="Archived"?"archive":""}">${esc(d.status)}</span></td><td><button class="btn secondary" onclick="viewDoc(${d.id})">View</button></td></tr>`}
+function renderHome(){document.getElementById("statDocs").textContent=docs.length;document.getElementById("latestRows").innerHTML=[...docs].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5).map(docRow).join("")}
+function renderLibrary(){let q=(document.getElementById("q").value||"").toLowerCase(),c=document.getElementById("cat").value,y=document.getElementById("year").value,s=document.getElementById("status").value;let list=docs.filter(d=>(!q||(d.title+" "+d.ref).toLowerCase().includes(q))&&(!c||d.category===c)&&(!y||d.date.startsWith(y))&&(!s||d.status===s)).sort((a,b)=>b.date.localeCompare(a.date));document.getElementById("libraryRows").innerHTML=list.map(docRow).join("")||'<tr><td colspan="6">No documents match your filters.</td></tr>';document.getElementById("resultCount").textContent=list.length+" document(s) found"}
+function clearFilters(){["q","cat","year","status"].forEach(id=>document.getElementById(id).value="");renderLibrary()}
+function card(d){return `<div class="panel doc-card"><div class="pdf">PDF</div><div style="flex:1"><h3>${esc(d.title)}</h3><p>${esc(d.description||"Departmental document")}<br>${esc(d.category)} · ${fmt(d.date)} · v${esc(d.version)}</p><div class="actions"><button class="btn secondary" onclick="viewDoc(${d.id})">View document</button></div></div></div>`}
+function renderKnowledge(){document.getElementById("knowledgeCards").innerHTML=knowledgeResources.map(r=>`<div class="panel doc-card"><div class="pdf">${r.type==="PDF"?"PDF":r.type==="Official Website"?"WEB":"PPT"}</div><div style="flex:1"><h3>${esc(r.title)}</h3><p>${esc(r.type)} · Knowledge Base resource</p><div class="actions"><a class="btn secondary" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-block">Open resource ↗</a></div></div></div>`).join("")}
+function renderCards(){document.getElementById("attendanceCards").innerHTML=docs.filter(d=>d.category==="Attendance").map(card).join("")||"<p>No attendance documents added yet.</p>";document.getElementById("holidayCards").innerHTML=docs.filter(d=>d.category==="Holiday Calendar").map(card).join("")||"<p>No holiday documents added yet.</p>";document.getElementById("formCards").innerHTML=docs.filter(d=>d.category==="Forms & Templates").map(card).join("")||"<p>No forms added yet.</p>";document.getElementById("districtCards").innerHTML=docs.filter(d=>d.category==="District Reporting").map(card).join("")||"<p>No district reporting resources added yet.</p>";document.getElementById("historyRows").innerHTML=docs.map(d=>`<tr><td>${esc(d.title)}</td><td>${esc(d.version)}</td><td>${fmt(d.date)}</td><td>${esc(d.description||"Record created")}</td><td>${esc(d.status)}</td></tr>`).join("")}
+function viewDoc(id){let d=docs.find(x=>x.id===id);document.getElementById("modalTitle").textContent=d.title;document.getElementById("modalBody").innerHTML=`<p>${esc(d.description||"")}</p><p><b>Category:</b> ${esc(d.category)}<br><b>Reference:</b> ${esc(d.ref||"—")}<br><b>Publication date:</b> ${fmt(d.date)}<br><b>Version:</b> ${esc(d.version)}<br><b>Status:</b> ${esc(d.status)}</p>${d.url?`<a class="btn" href="${esc(d.url)}" target="_blank" rel="noopener">Open PDF</a>`:'<div class="notice">No PDF link has been configured for this demonstration record. An administrator should add the approved Google Drive link.</div>'}`;document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function toast(t){let x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3200)}
+function renderAll(){renderHome();renderLibrary();renderCards();renderKnowledge()}
+renderAll();
+</script>
+</body></html>
