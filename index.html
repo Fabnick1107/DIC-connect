@@ -217,6 +217,26 @@ td strong{font-size:14px;font-weight:600;color:var(--ink)}
  .doc-card{padding:16px}
  .modal{padding:18px}
 }
+/* Attendance guidelines content */
+.g-wrap{display:grid;gap:16px;margin-top:20px}
+.g-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.g-card h2{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ink);margin:0 0 14px;display:flex;align-items:center;gap:12px}
+.g-card h2 .num{width:32px;height:32px;border-radius:9px;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:var(--sans);font-size:15px;font-weight:700;flex:none}
+.g-card h3{font-size:15px;font-weight:700;color:var(--teal-d);margin:18px 0 8px}
+.g-card p{margin:0 0 10px;color:var(--text);line-height:1.6}
+.g-card ul{margin:0 0 12px;padding-left:20px}
+.g-card li{margin:5px 0;line-height:1.6}
+.g-card li::marker{color:var(--teal)}
+.g-steps{list-style:none;padding:0!important;margin:0 0 14px;display:grid;gap:8px}
+.g-steps li{display:flex;gap:12px;align-items:flex-start;background:var(--teal-tint);border-radius:9px;padding:11px 14px;margin:0}
+.g-steps b{color:var(--teal-d);white-space:nowrap}
+.g-card .notice{margin:14px 0}
+.g-card table{min-width:0}
+.g-card .table-wrap{border:1px solid var(--line);margin:6px 0 16px}
+.g-contact{background:var(--ink);color:#e6eef6;border-radius:var(--r);padding:18px 22px;line-height:1.6}
+.g-contact strong{color:#f3cd78}
+@media(max-width:560px){.g-card{padding:18px 16px}.g-steps li{flex-direction:column;gap:2px}}
+
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -291,8 +311,78 @@ td strong{font-size:14px;font-weight:600;color:var(--ink)}
 </section>
 <section class="page" id="page-attendance">
  <div class="hero-small"><h1>Attendance Guidelines</h1><p>Central location for attendance procedures, instructions and related documents.</p></div>
- <div class="notice">Attendance guidelines and related instructions are listed below, including the Minutes of Meeting dated 1 October 2026. Open each source document using its link.</div>
- <div class="section-head"><div><h2>Attendance documents</h2><p>Open the relevant departmental document.</p></div></div><div class="doc-grid" id="attendanceCards"></div>
+ <div class="notice"><b>Minutes of the Meeting – 1st October 2026.</b> Review and Finalization of Leave, Office Timing and Attendance Regularization Procedures (Virtual Meeting, 09:00 PM; 66 Team Members and Shri Ashok Jain). All team members are required to follow these instructions with immediate effect and ensure strict compliance.</div>
+ <div class="g-wrap">
+  <article class="g-card">
+   <h2><span class="num">1</span>Leave Approval Process</h2>
+   <p>The following approval hierarchy shall be followed for all leave applications:</p>
+   <ul class="g-steps">
+    <li><b>Step 1:</b><span>Obtain approval from the concerned GM - DIC</span></li>
+    <li><b>Step 2:</b><span>Forward the leave request to the Team Lead along with the GM's in-principle approval</span></li>
+    <li><b>Step 3:</b><span>Apply for the approved leave through the PeopleStrong App</span></li>
+   </ul>
+   <h3>Planned Leave</h3>
+   <ul>
+    <li>All planned leave must be applied for at least 3 days in advance.</li>
+    <li>Team members are expected to plan their leave in advance and obtain the necessary approval before proceeding on leave.</li>
+    <li>Leave without prior approval may not be considered as approved leave.</li>
+   </ul>
+   <h3>Emergency Leave</h3>
+   <ul>
+    <li>In case of a medical emergency, or any other unavoidable situation, the concerned Line Manager must be informed at the earliest through official email as well as by phone.</li>
+    <li>The team member must also apply for the leave through the PeopleStrong App at the earliest possible opportunity.</li>
+   </ul>
+   <div class="notice"><b>Important:</b> Team Members should not avail leave merely because QCI has declared a holiday/leave if the respective client/department has not declared a corresponding holiday/leave. Team Members are required to follow the holiday/working-day schedule applicable to their respective client/office.</div>
+  </article>
+
+  <article class="g-card">
+   <h2><span class="num">2</span>Official Office Timing</h2>
+   <ul>
+    <li>The prescribed operational office hours are 10:30 AM to 06:10 PM</li>
+    <li>Where required, working hours may extend beyond 06:10 PM depending upon the workload and work requirements of the respective office.</li>
+   </ul>
+   <h3>Late Coming and Early Leaving</h3>
+   <ul>
+    <li>A maximum of 3 instances of Late Coming/Early Leaving shall be permitted, subject to the applicable attendance rules.</li>
+    <li>Late Coming: Arrival up to 11:00 AM shall be considered as late coming.</li>
+    <li>Early Leaving: Departure after 05:30 PM shall be considered as early leaving.</li>
+   </ul>
+   <div class="notice"><b>Important:</b> Any arrival after 11:00 AM or departure before 05:30 PM shall be treated as Half Day, unless the absence/early departure is covered by duly approved leave or prior permission.</div>
+   <p>Team members are therefore advised to strictly adhere to the prescribed office timings and avoid repeated late coming or early leaving.</p>
+  </article>
+
+  <article class="g-card">
+   <h2><span class="num">3</span>Attendance Regularization Process</h2>
+   <p>All team members are required to regularize their attendance strictly within the prescribed dates and time slots given below:</p>
+   <div class="table-wrap"><table>
+    <thead><tr><th>Attendance Period</th><th>Regularization Date</th><th>Time</th></tr></thead>
+    <tbody>
+     <tr><td>26th to 10th</td><td>11th</td><td>10:00 AM – 01:00 PM</td></tr>
+     <tr><td>11th to 20th</td><td>21st</td><td>10:00 AM – 01:00 PM</td></tr>
+     <tr><td>21st to 25th</td><td>26th</td><td>10:00 AM – 01:00 PM</td></tr>
+    </tbody>
+   </table></div>
+   <h3>Attendance Regularization Guidelines</h3>
+   <ul>
+    <li>Attendance must be regularized slot-wise for the complete applicable period.</li>
+    <li>The first 5 days of the respective period should be regularized together in the first slot, and the next 5 days should be regularized together in the second slot, wherever applicable.</li>
+    <li>Team members should not regularize attendance on a day-to-day basis.</li>
+    <li>Team members are personally responsible for ensuring that their attendance is correctly recorded and regularized within the prescribed window.</li>
+   </ul>
+   <div class="notice"><b>Important:</b> All team members must complete their attendance regularization within the specified date and time window. Failure to do so may result in attendance discrepancies and may affect the attendance record accordingly.</div>
+  </article>
+
+  <article class="g-card">
+   <h2><span class="num">4</span>Compliance with Instructions</h2>
+   <ul>
+    <li>All team members are hereby advised to take note of the above procedures and ensure strict and consistent compliance with immediate effect.</li>
+    <li>Repeated non-compliance with the prescribed leave procedure, office timings, or attendance regularization requirements may be viewed seriously.</li>
+    <li>Team members are requested to plan their leave in advance, maintain punctuality, and ensure timely attendance regularization to avoid any administrative or attendance-related issues.</li>
+   </ul>
+  </article>
+
+  <div class="g-contact">For any clarification regarding the above procedures, employees may contact: <strong>Mr. Nishit Patel &amp; Mr. Yavnik Makwana</strong></div>
+ </div>
 </section>
 <section class="page" id="page-holidays">
  <div class="hero-small"><h1>Holiday Calendar</h1><p>Year-wise holiday calendar and reference.</p></div><div class="notice">Holiday calendar for 2027. Open the PDF to view the complete document.</div><div class="doc-grid" id="holidayCards"></div>
@@ -352,7 +442,7 @@ function renderLibrary(){let q=(document.getElementById("q").value||"").toLowerC
 function clearFilters(){["q","cat","year","status"].forEach(id=>document.getElementById(id).value="");renderLibrary()}
 function card(d){return `<div class="panel doc-card"><div class="pdf">PDF</div><div style="flex:1"><h3>${esc(d.title)}</h3><p>${esc(d.description||"Departmental document")}<br>${esc(d.category)} · ${fmt(d.date)} · v${esc(d.version)}</p><div class="actions"><button class="btn secondary" onclick="viewDoc(${d.id})">View document</button></div></div></div>`}
 function renderKnowledge(){document.getElementById("knowledgeCards").innerHTML=knowledgeResources.map(r=>`<div class="panel doc-card"><div class="pdf ${r.type==="PDF"?"":r.type==="Official Website"?"t-web":"t-ppt"}">${r.type==="PDF"?"PDF":r.type==="Official Website"?"WEB":"PPT"}</div><div style="flex:1"><h3>${esc(r.title)}</h3><p>${esc(r.type)} · Knowledge Base resource</p><div class="actions"><a class="btn secondary" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-block">Open resource ↗</a></div></div></div>`).join("")}
-function renderCards(){document.getElementById("attendanceCards").innerHTML=docs.filter(d=>d.category==="Attendance").map(card).join("")||"<p>No attendance documents added yet.</p>";document.getElementById("holidayCards").innerHTML=docs.filter(d=>d.category==="Holiday Calendar").map(card).join("")||"<p>No holiday documents added yet.</p>";document.getElementById("formCards").innerHTML=docs.filter(d=>d.category==="Forms & Templates").map(card).join("")||"<p>No forms added yet.</p>";document.getElementById("districtCards").innerHTML=docs.filter(d=>d.category==="District Reporting").map(card).join("")||"<p>No district reporting resources added yet.</p>";document.getElementById("historyRows").innerHTML=docs.map(d=>`<tr><td>${esc(d.title)}</td><td>${esc(d.version)}</td><td>${fmt(d.date)}</td><td>${esc(d.description||"Record created")}</td><td>${esc(d.status)}</td></tr>`).join("")}
+function renderCards(){document.getElementById("holidayCards").innerHTML=docs.filter(d=>d.category==="Holiday Calendar").map(card).join("")||"<p>No holiday documents added yet.</p>";document.getElementById("formCards").innerHTML=docs.filter(d=>d.category==="Forms & Templates").map(card).join("")||"<p>No forms added yet.</p>";document.getElementById("districtCards").innerHTML=docs.filter(d=>d.category==="District Reporting").map(card).join("")||"<p>No district reporting resources added yet.</p>";document.getElementById("historyRows").innerHTML=docs.map(d=>`<tr><td>${esc(d.title)}</td><td>${esc(d.version)}</td><td>${fmt(d.date)}</td><td>${esc(d.description||"Record created")}</td><td>${esc(d.status)}</td></tr>`).join("")}
 function viewDoc(id){let d=docs.find(x=>x.id===id);document.getElementById("modalTitle").textContent=d.title;document.getElementById("modalBody").innerHTML=`<p>${esc(d.description||"")}</p><p><b>Category:</b> ${esc(d.category)}<br><b>Reference:</b> ${esc(d.ref||"—")}<br><b>Publication date:</b> ${fmt(d.date)}<br><b>Version:</b> ${esc(d.version)}<br><b>Status:</b> ${esc(d.status)}</p>${d.url?`<a class="btn" href="${esc(d.url)}" target="_blank" rel="noopener">Open PDF</a>`:'<div class="notice">No PDF link has been configured for this demonstration record. An administrator should add the approved Google Drive link.</div>'}`;document.getElementById("modal").classList.add("show")}
 function closeModal(){document.getElementById("modal").classList.remove("show")}
 function toast(t){let x=document.getElementById("toast");x.textContent=t;x.style.display="block";setTimeout(()=>x.style.display="none",3200)}
